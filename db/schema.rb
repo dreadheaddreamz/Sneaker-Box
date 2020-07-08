@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_004450) do
+ActiveRecord::Schema.define(version: 2020_07_08_005102) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.boolean "easy_pickup"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "heat"
+    t.string "title"
+    t.string "content"
+    t.integer "user_id", null: false
+    t.integer "shoes_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shoes_id"], name: "index_reviews_on_shoes_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "shoes", force: :cascade do |t|
@@ -37,6 +49,8 @@ ActiveRecord::Schema.define(version: 2020_07_08_004450) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "reviews", "shoes", column: "shoes_id"
+  add_foreign_key "reviews", "users"
   add_foreign_key "shoes", "brands"
   add_foreign_key "shoes", "users"
 end
