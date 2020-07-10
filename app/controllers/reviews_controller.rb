@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     end
 
     def index
-        if params[:shoe_id] && set_shoe #nested and shoe id
+        if set_shoe #nested and shoe id
             @reviews = @shoe.reviiews
         else
             @reviews = Review.all #not nested
@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
     end
 
     def show
-        set_shoe
+        @review = Review.find_by_id(params[:id])
     end
 
     private
