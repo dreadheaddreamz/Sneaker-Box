@@ -1,0 +1,16 @@
+<% if @shoe %>
+    <h1>Kicks reviewed for <%= @shoe.name %> - <%= @shoe.brand_name%>
+<% else %>
+    <h1>All Kicks reviewed</h1>
+<% end %>
+
+
+<ol>
+<% @reviews.each do |sr| %>
+
+<li> 
+<%= sr.shoe.name%> + <%= sr.title %> + <%= sr.heat %>
+</li>
+<% end %>
+
+</ol>

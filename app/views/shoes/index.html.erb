@@ -1,0 +1,11 @@
+<h1><%= @user.usernam "Kicks!" %></h1>
+
+<% @shoes.each do |s| %>
+
+    <h2><%= s.name %> <%= s.brand.name %>
+    <%= link_to "Write about quality" new_shoes_review_path(s.id)%>
+
+<div>
+    <p><%= s.description %></p>
+</div>
+<% end %>
