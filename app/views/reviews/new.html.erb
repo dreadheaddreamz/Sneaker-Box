@@ -1,0 +1,20 @@
+<h1>Add Review for <%= @review.shoe.name %></h1>
+<%= form_for(@review) do |f|%>
+     <div>
+        <%= f.label :heat %>
+        <%= f.number_field :heat, min:1, max:10 %>
+    </div>
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+     <div>
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+    </div>
+    <%= f.hidden_field :shoe_id %>
+
+    <%= f.submit %>
+
+    <% end %>
