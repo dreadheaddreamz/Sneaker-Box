@@ -7,14 +7,4 @@ class Shoe < ApplicationRecord
 
   validates :name, presence: true
 
-  validate :not_a_duplicate
-
-
-  def not_a_duplicate
-    shoe = Shoe.find_by(name: name, brand_id: brand_id)
-    if !!shoe && shoe != self
-      errors.add(:shoe, 'has already been added for that brand')
-    end
-  end
-
 end

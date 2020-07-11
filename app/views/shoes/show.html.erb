@@ -1,12 +1,13 @@
-<h1> shoes added </h1>
+<h1><%= @shoe.name%>  </h1>
 
+
+<h2> <%= @shoe.brand_id_change %> </h2>
 <div>
   <p><%= @shoe.description %></p>
 </div>
 
-<h3>Added by: <%= link_to @shoe.user, user_path(@user)%> </h3>
 
-<%= link_to "Edit #{@shoe.flavor}", edit_shoe_path(@shoe) if @shoe.user == current_user%>
+<%= link_to "Edit #{@shoe.name}", edit_shoe_path(@shoe) if @shoe.user == current_user%>
 
 <br>
 

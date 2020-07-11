@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2020_07_08_223711) do
     t.string "title"
     t.string "content"
     t.integer "user_id", null: false
-    t.integer "shoes_id", null: false
+    t.integer "shoe_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["shoes_id"], name: "index_reviews_on_shoes_id"
+    t.index ["shoe_id"], name: "index_reviews_on_shoe_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_223711) do
     t.string "string"
   end
 
-  add_foreign_key "reviews", "shoes", column: "shoes_id"
+  add_foreign_key "reviews", "shoes"
   add_foreign_key "reviews", "users"
   add_foreign_key "shoes", "brands"
   add_foreign_key "shoes", "users"

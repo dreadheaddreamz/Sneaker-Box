@@ -1,4 +1,8 @@
 class ShoesController < ApplicationController
+    before_action :set_shoes, only:[:show, :edit, :update]
+    before_action :redirect_if_not_logged_in
+
+
     def new
         @shoe = Shoe.new
         @shoe.build_brand
@@ -8,15 +12,33 @@ class ShoesController < ApplicationController
         @shoe = Shoe.new(shoe_params)
         @shoe.user_id = session[:user_id]
         if @shoe.save
-          redirect_to shoe_path(@shoe)
+            redirect_to shoe_path(@shoe)
         else
           render :new
         end
       end
 
+      def index
+        @shoes = Brand.all
+      end
+
+      def show
+        @shoes = Shoe.all
+      end
+
+      def edit
+      end
+
+
+
     private
 
     def shoe_params
-        params.require(:shoe).permit(:name, :description, :shoe_id, brand_attributes: [:name])
+        params.require(:shoe).permit(:name, :description, :brand_id, brand_attributes: [:name])
+    end
+
+    def set_shoes
+        @shoe = Shoe.find_by(params[:id])
+        redirect_to shoes_path if !@shoe
     end
 end

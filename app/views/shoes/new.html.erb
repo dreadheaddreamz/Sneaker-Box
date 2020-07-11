@@ -15,11 +15,11 @@
 
     <p>Brands: </p>
     <div>
-    <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+    <%= f.collection_select :brand_id, Brand.all, :id, :name, include_blank: 'Select One' %>
 
     </div>
 
-    <p> Add new Brand: <p>
+    <p> or add new Brand: <p>
     <div>
     <%= f.fields_for :brand do |b| %>
     <%= b.label :name %>

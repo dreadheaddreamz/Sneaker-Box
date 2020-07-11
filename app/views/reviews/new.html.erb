@@ -1,9 +1,18 @@
-<h1>Add Review for <%= @review.shoes.name %></h1>
+
 
 <%= render partial: 'layouts/errors', locals: {object: @review}  %>
 
 
 <%= form_for(@review) do |f|%>
+  <% if params[:shoes_id] %>
+    <%= f.hidden_field :shoes_id %>
+  <% else %>
+    <div>
+      <%= f.label :shoes_id, "Select a shoe" %>
+      <%= f.collection_select :shoe_id, Shoe.all, :id, :name, include_blank: true  %>
+    </div>
+  <% end %>
+
      <div>
         <%= f.label :heat %>
         <%= f.number_field :heat, min:1, max:10 %>
