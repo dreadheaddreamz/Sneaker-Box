@@ -28,7 +28,12 @@ class ShoesController < ApplicationController
       end
 
       def edit
+        if @shoe.update(shoe_params)
+          redirect_to shoe_path(@shoe)
+        else
+          render :edit
       end
+    end
 
 
 

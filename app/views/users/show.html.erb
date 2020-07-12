@@ -1,1 +1,8 @@
-<%=@user.username%>
+<h1>Welcome to <%= @user.username%>'s homepage! </h1>
+
+<h3>All the kicks reviewed and in <%=@user.username%>'closet:</h3>
+<ul>
+  <% @user.shoes.each do |sr|%>
+  <li> <%= link_to sr.name_and_brand, shoe_path(sr)%> </li>
+  <% end %>
+</ul>
