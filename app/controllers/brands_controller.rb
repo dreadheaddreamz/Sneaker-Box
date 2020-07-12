@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
 
 
     def index
-      @brands = Brand.find_by(params[:brand_id])
+      @brand = Brand.all
     end
   
 end

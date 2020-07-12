@@ -24,7 +24,6 @@ class ShoesController < ApplicationController
       end
 
       def show
-        @shoes = Shoe.all
       end
 
       def edit

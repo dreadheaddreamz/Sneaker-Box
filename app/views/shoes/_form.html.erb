@@ -1,0 +1,29 @@
+<%= render partial: 'layouts/errors', locals: {object: @shoe}  %>
+
+<%= form_for(@shoe) do |f|%>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <br>
+
+  <p> Choose a shoe brand: </p>
+  <div>
+    <%= f.collection_select :brand_id, Brand.all, :shoes, :name, include_blank: 'Select One'%>
+
+  </div>
+
+  <p> Or create a new Brand: </p>
+  <div>
+    <%=f.fields_for :brand do |b| %>
+      <%= b.label :name %>
+      <%= b.text_field :name %>
+    <% end %>
+  </div>
+  <br>
+  <%= f.submit %>
+<% end %>

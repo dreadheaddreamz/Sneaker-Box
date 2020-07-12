@@ -1,35 +1,4 @@
 <h1>Add Kicks!</h1>
 
-<%= render partial: 'layouts/errors', locals: {object: @shoe}  %>
+<%= render partial: 'form'%>
 
-
-
-<%= form_for(@shoe) do |f|%>
-    <div>
-        <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    </div>
-
-    <p>Brands: </p>
-    <div>
-    <%= f.collection_select :brand_id, Brand.all, :id, :name, include_blank: 'Select One' %>
-
-    </div>
-
-    <p> or add new Brand: <p>
-    <div>
-    <%= f.fields_for :brand do |b| %>
-    <%= b.label :name %>
-    <%= b.text_field :name %>
-    <% end %>
-
-
-    </div>
-    <br>
-
-
-    <%= f.submit "Add" %>
-<% end %>
