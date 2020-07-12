@@ -2,9 +2,9 @@
 
 <% @shoes.each do |s| %>
 
-  <h2><%= link_to s.name, shoe_path(s.id)%> - <%= s.name %> </h2>
-  <%= link_to "Write a review", new_shoe_review_path%>
-   <% end %>
+  <h2><%= link_to s.name, shoe_path(s.id)%> - <%= s.brand.name %> </h2>
+  <%= link_to "Write a review", new_shoe_review_path(s) %>
   <div>
-    <p><%= s.description %></p>
+    <%= s.description%>
+     <% end %>
   </div>

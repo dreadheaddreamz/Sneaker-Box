@@ -14,12 +14,13 @@ class ShoesController < ApplicationController
         if @shoe.save
             redirect_to shoe_path(@shoe)
         else
+          @shoe.build_brand
           render :new
         end
       end
 
       def index
-        @shoes = Brand.all
+        @shoes = Shoe.all
       end
 
       def show
