@@ -27,6 +27,9 @@ class ShoesController < ApplicationController
       end
 
       def edit
+      end
+
+      def update
         if @shoe.update(shoe_params)
           redirect_to shoe_path(@shoe)
         else
@@ -43,7 +46,7 @@ class ShoesController < ApplicationController
     end
 
     def set_shoes
-        @shoe = Shoe.find_by(params[:id])
+        @shoe = Shoe.find_by(id: params[:id])
         redirect_to shoes_path if !@shoe
     end
 end

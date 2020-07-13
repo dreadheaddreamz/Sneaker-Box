@@ -1,10 +1,11 @@
 <h1>All the Kicks</h1>
 
 <% @shoes.each do |s| %>
-
+  
   <h2><%= link_to s.name, shoe_path(s.id)%> - <%= s.brand.name %> </h2>
+  <%= s.description%>
+  <br>
   <%= link_to "Write a review", new_shoe_review_path(s) %>
   <div>
-    <%= s.description%>
      <% end %>
   </div>

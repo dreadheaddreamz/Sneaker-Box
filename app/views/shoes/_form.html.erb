@@ -13,7 +13,7 @@
 
   <p> Choose a shoe brand: </p>
   <div>
-    <%= f.collection_select :brand_id, Brand.all, :shoes, :name, include_blank: 'Select One'%>
+    <%= f.collection_select :brand_id, Brand.all, :id, :name, include_blank: 'Select One'%>
 
   </div>
 
