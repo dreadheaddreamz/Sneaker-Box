@@ -23,4 +23,7 @@ class Shoe < ApplicationRecord
     "#{name} - #{brand.try(:name)}"
   end
 
+  def self.latest_shoes #5 most recent shoes
+    order(created_at: :desc).each_slice(5).first
+  end
 end

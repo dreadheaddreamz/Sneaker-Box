@@ -37,6 +37,10 @@ class ShoesController < ApplicationController
       end
     end
 
+    def latest_shoes
+      @shoes = Shoe.latest_shoes
+    end
+
 
 
     private
