@@ -20,7 +20,16 @@ class ShoesController < ApplicationController
       end
 
       def index
-        @shoes = Shoe.all
+       if params[:s]
+        byebug
+          @shoes = Shoe.where('name LIKE ?', "%#{params[:s]}%")
+        else
+          @shoes = Shoe.all
+      end
+    end
+
+      def search
+        @shoe = Shoe.search(params[:brand_attributes])
       end
 
       def show

@@ -1,5 +1,12 @@
 <h1>All the Kicks</h1>
 
+<h4> Search by shoe </h4>
+<%= form_tag(shoes_path, method: :get) do %>
+<%= label_tag(:s, "search for:") %>
+<%= text_field_tag(:s) %>
+<%= submit_tag ("Search")%>
+<% end %>
+
 <% @shoes.each do |s| %>
   
   <h2><%= link_to s.name, shoe_path(s.id)%> - <%= s.brand.name %> </h2>
