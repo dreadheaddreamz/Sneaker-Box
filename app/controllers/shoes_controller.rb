@@ -50,6 +50,9 @@ class ShoesController < ApplicationController
       @shoes = Shoe.latest_shoes
     end
 
+    def newview
+    end
+
 
 
     private
