@@ -21,7 +21,6 @@ class ShoesController < ApplicationController
 
       def index
        if params[:s]
-        byebug
           @shoes = Shoe.where('name LIKE ?', "%#{params[:s]}%")
         else
           @shoes = Shoe.all
