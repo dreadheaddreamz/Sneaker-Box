@@ -1,13 +1,16 @@
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-black bg-black">
+    <a class="navbar-brand" href="#" class="text-white bg-dark"><%= image_tag("SNBox.png",:size => '50x50') %>
+    </a>
+    <p class="text-danger">
     <form class="form-inline">
-    <button class="btn btn-outline-primary" type="button"><%= link_to "Home", user_path(current_user) %></button> |
-   <button class="btn btn-outline-primary" type="button"> <%= link_to "Sign up", signup_path %> |
-   <button class="btn btn-outline-primary" type="button"> <%= link_to "Log Out", logout_path, method: :delete %> |
-    <button class="btn btn-outline-primary" type="button"><%= link_to "Add kicks", new_shoe_path %> |
-    <button class="btn btn-outline-primary" type="button"><%= link_to "All Brands", brands_path %> |
-    <button class="btn btn-outline-primary" type="button"><%= link_to "All Shoes", shoes_path %> |
-   <button class="btn btn-outline-primary" type="button"> <%= link_to "All Reviews", reviews_path %> |
-   <button class="btn btn-outline-primary" type="button"> <%= link_to "Recent User Shoes", latest_shoes_url %> |
-
+    <button class="btn btn-outline-danger" type="button"><%= link_to "Home", user_path(current_user) %></button> |
+    <button class="btn btn-outline-danger" type="button"> <%= link_to "Sign up", signup_path %> |
+    <button class="btn btn-outline-danger" type="button"> <%= link_to "Log Out", logout_path, method: :delete %> |
+    <button class="btn btn-outline-danger" type="button"><%= link_to "Add kicks", new_shoe_path %> |
+    <button class="btn btn-outline-danger" type="button"><%= link_to "All Brands", brands_path %> |
+    <button class="btn btn-outline-danger" type="button"><%= link_to "All Shoes", shoes_path %> |
+    <button class="btn btn-outline-danger" type="button"> <%= link_to "All Reviews", reviews_path %> |
+    <button class="btn btn-outline-danger" type="button"> <%= link_to "Recent User Shoes", latest_shoes_url %> |
     </form>
     </nav>
+   
