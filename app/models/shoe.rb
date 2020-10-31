@@ -6,7 +6,7 @@ class Shoe < ApplicationRecord
   #accepts_nested_attributes_for :brand
 
   validates :name, presence: true
-  validates :img_url, presence: true
+  validates :image, presence: true
 
 
   def brand_attributes=(attributes)

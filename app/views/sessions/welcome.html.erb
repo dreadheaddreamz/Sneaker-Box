@@ -1,10 +1,12 @@
 <p> 
-<nav class="navbar navbar-dark bg-dark">
+ <nav class="navbar navbar-black bg-black">
+    <a class="navbar-brand" href="#" class="text-white bg-dark"><%= image_tag("SNBox.png",:size => '50x50') %>
+    </a>
+    <p class="text-danger">
 <form class="form-inline">
-<button class="btn btn-outline-primary" type="button"><%= link_to "Sign up", signup_path %> |
-<button class="btn btn-outline-primary" type="button"><%= link_to "Login", login_path %> |
-<button class="btn btn-outline-primary" type="button"><%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+<button class="btn btn-outline-danger" type="button"><%= link_to "Sign up", signup_path %> |
+<button class="btn btn-outline-danger" type="button"><%= link_to "Login", login_path %> |
+<button class="btn btn-outline-danger" type="button"><%= link_to "Sign in with Google", "/auth/google_oauth2" %>
 </form>
 </nav>
-</p>
-<h1>Welcome to SneakerBox!!</h1>
+<h1>Welcome to SneakerBox</h1>
