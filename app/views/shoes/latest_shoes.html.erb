@@ -1,8 +1,8 @@
 <h1>Latest Shoes created: </h1>
 
-<% @shoes.each do |s| %>
+ <% @shoes.each do |s| %>
   
-  <h2><%= link_to s.name, shoe_path(s.id)%> - <%= s.brand.name %> </h2>
+  <h2> <%= link_to s.name, shoe_path(s.id)%> - <%= s.brand.name %> </h2>
   <%= s.description%>
   <br>
   <div>

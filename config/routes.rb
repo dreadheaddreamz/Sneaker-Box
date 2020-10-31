@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   get '/latest_shoes' => 'shoes#latest_shoes'
   get "/shoes/search", to: "shoes#search"
-  get '/newview' => 'shoes#newview'
 
   get '/auth/google_oauth2/callback' => 'sessions#omniauth' 
 
