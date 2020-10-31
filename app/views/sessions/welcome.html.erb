@@ -1,8 +1,10 @@
-<h1>Welcome to SneakerBox!!</h1>
-
 <p> 
-<%= link_to "Login" , login_path%> |
-<%= link_to "Sign Up" , signup_path %> |
-<%= link_to "Sign in with Google" , "/auth/google_oauth2" %>
-
+<nav class="navbar navbar-dark bg-dark">
+<form class="form-inline">
+<button class="btn btn-outline-primary" type="button"><%= link_to "Sign up", signup_path %> |
+<button class="btn btn-outline-primary" type="button"><%= link_to "Login", login_path %> |
+<button class="btn btn-outline-primary" type="button"><%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+</form>
+</nav>
 </p>
+<h1>Welcome to SneakerBox!!</h1>
