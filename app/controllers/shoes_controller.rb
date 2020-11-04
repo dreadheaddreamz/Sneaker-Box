@@ -49,7 +49,8 @@ class ShoesController < ApplicationController
       @shoes = Shoe.latest_shoes
     end
 
-
+    def username
+    end
 
 
     private
