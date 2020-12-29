@@ -9,7 +9,7 @@ class ShoesController < ApplicationController
     end
 
     def create
-        @shoe = Shoe.new(shoe_params)
+        @shoe = Shoe.new(shoe_params)#instance variables
         @shoe.user_id = session[:user_id]
         if @shoe.save
             redirect_to shoe_path(@shoe)
@@ -21,7 +21,7 @@ class ShoesController < ApplicationController
 
       def index
        if params[:s]
-          @shoes = Shoe.where('name LIKE ?', "%#{params[:s]}%")
+          @shoes = Shoe.where('name LIKE ?', "%#{params[:s]}%")#searches and displays all shoe by name
         else
           @shoes = Shoe.all
       end
@@ -32,6 +32,10 @@ class ShoesController < ApplicationController
       end
 
       def show
+      end
+
+      def jordan
+        @shoes = Shoe.where('name LIKE ? ', "%jordan%")
       end
 
       def edit
@@ -52,11 +56,10 @@ class ShoesController < ApplicationController
     def username
     end
 
-
     private
 
     def shoe_params
-        params.require(:shoe).permit(:name, :description, :image, :brand_id, brand_attributes: [:name])
+        params.require(:shoe).permit(:name, :description, :image, :brand_id, brand_attributes: [:name])#schema
     end
 
     def set_shoes

@@ -1,0 +1,5 @@
+<h1>this is working</h1>
+
+<% @shoes.each do |s| %>
+<h2><%= link_to s.name, shoe_path(s.id)%></h2>
+<% end %>

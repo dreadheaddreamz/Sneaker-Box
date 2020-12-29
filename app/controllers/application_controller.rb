@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in? #used in your Rails views to share reusable code
 
     private
 
     def logged_in?
-        !!session[:user_id]
+        !!session[:user_id] #boolean value
     end
 
     def current_user
-        @current_user ||= User.find_by_id(session[:user_id])
+        @current_user ||= User.find_by_id(session[:user_id]) #current user is equal to user_id
     end
 
     def redirect_if_not_logged_in
